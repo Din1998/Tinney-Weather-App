@@ -9,7 +9,7 @@ export default function TempComponent({currentDate,weather}) {
   return(
     <div className='Temp__wraper'>
       <Row>
-        <Col>
+        <Col md={6} sm={12}>
         <Card className='Temp__card card'>
           {(typeof weather.main != "undefined") ? (
             <div className='inner__wraper'>
@@ -28,7 +28,7 @@ export default function TempComponent({currentDate,weather}) {
               </div>)}
           </Card>
         </Col>
-        <Col>
+        <Col md={6} sm={12}>
         <div className='chart__wraper'>
           <Card className='chart__card card'>
           {(typeof weather.main != "undefined") ? (
