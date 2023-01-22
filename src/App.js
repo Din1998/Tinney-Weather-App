@@ -1,12 +1,27 @@
-import React, { useState } from 'react';
+import React,{useState} from "react"
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import SearchBar from "./components/SearchBar";
+import './app.css'
+import TempComponent from './components/TempComponent';
+
+import WatchComponent from './components/WatchComponent';
+import Footer from './components/Footer';
+
+
 const api = {
   key: "7f6b2b2901ccfdb82bda76d2ef1024c7",
   base: "https://api.openweathermap.org/data/2.5/"
 }
 
-function App() {
+export default function App() {
+
+
+
   const [query, setQuery] = useState('');
   const [weather, setWeather] = useState({});
+  console.log(weather)
 
   const search = evt => {
     if (evt.key === "Enter") {
@@ -32,36 +47,37 @@ function App() {
     return `${day} ${date} ${month} ${year}`
   }
 
-  return (
-    <div className={(typeof weather.main != "undefined") ? ((weather.main.temp > 16) ? 'app warm' : 'app') : 'app'}>
-      <main>
-        <div className="search-box">
-          <input 
-            type="text"
-            className="search-bar"
-            placeholder="Search..."
-            onChange={e => setQuery(e.target.value)}
-            value={query}
-            onKeyPress={search}
-          />
-        </div>
-        {(typeof weather.main != "undefined") ? (
-        <div>
-          <div className="location-box">
-            <div className="location">{weather.name}, {weather.sys.country}</div>
-            <div className="date">{dateBuilder(new Date())}</div>
-          </div>
-          <div className="weather-box">
-            <div className="temp">
-              {Math.round(weather.main.temp)}°c
-            </div>
-            <div className="weather">{weather.weather[0].main}</div>
-          </div>
-        </div>
-        ) : ('')}
-      </main>
-    </div>
-  );
-}
 
-export default App;
+  return(
+    <div className='main__container'>
+      <Container>
+        <Row>
+          <Col>
+            <SearchBar
+            setQuery={setQuery}
+            query={query}
+            search={search}
+            />
+          </Col>
+        </Row>
+        <Row>
+          <Col md={6}>
+            <WatchComponent />
+          </Col>
+        </Row>
+        <Row>
+          <Col md={12} sm={12}>
+            <TempComponent
+            currentDate={dateBuilder(new Date())}
+            weather={weather}
+            />
+          </Col>
+         
+        </Row>
+        <Row>
+          <Footer/>
+        </Row>
+      </Container>
+    </div>
+  )
+}

@@ -1,0 +1,148 @@
+*{
+  margin: 0;
+  padding: 0;
+  
+}
+
+.main__container{
+  width: 100%;
+  height: 620px;
+}
+
+.input__comp{
+  padding: 24px 0px 24px 0px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.input{
+  outline: none; 
+  border: none;
+  border-bottom: 2px solid #7294C1;
+}
+
+
+.card{
+  height: 320px;
+}
+
+.watch__comp{
+  padding: 20px 0px 20px 0px;
+}
+
+.inner__wraper{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.temp__text{
+  font-size: 120px;
+}
+
+
+.time__text{
+  color: #7294C1;
+  font-size: 56px;
+  
+}
+
+.before__input{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%; 
+  align-items: center;
+  text-align: center;
+}
+
+.main__{
+  
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.box__wraper{
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-auto-rows: 93px;
+  grid-gap: 10px;
+}
+
+.a{
+  background-color: #7294C1;
+  grid-column: 1/6;
+  grid-row: 1;
+  border-radius: 4px;
+}
+
+.b{
+  background-color: #7294C1;
+  grid-column: 7/12;
+  grid-row: 1;
+  border-radius: 4px;
+}
+
+.c{
+  background-color: #7294C1;
+  grid-column: 1/6;
+  grid-row: 2;
+  border-radius: 4px;
+}
+
+.d{
+  background-color: #7294C1;
+  grid-column: 7/12;
+  grid-row: 2;
+  border-radius: 4px;
+}
+
+.e{
+  background-color: #7294C1;
+  grid-column: 1/6;
+  grid-row: 3;
+  border-radius: 4px;
+}
+
+.f{
+  background-color: #7294C1;
+  grid-column: 7/12;
+  grid-row: 3;
+  border-radius: 4px;
+}
+
+
+.footer__section{
+  padding: 24px;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.creator__site{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 1px solid #7294C1;
+}
+
+.link{
+  text-decoration: none;
+  color: #7294C1;
+}
+
+
+@media screen and (max-width: 300px) {
+  .time__text {
+    font-size: 74px;
+  }
+}
